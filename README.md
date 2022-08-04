@@ -1,2 +1,4 @@
-# Roblox-Star-Wars-GUI
-Use this Roblox Exploit Script in any roblox star wars game including Jedi Temple on Ilumn 2 New Updates will soon be added.
+Use these exploits at your own risk Roblox can ban your account or IP ban you or maybe hardware ban you depending on what you have done, so please
+do this at your own RISK.
+
+GOOD LUCK 👍👍
