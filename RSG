@@ -1,3 +1,6 @@
+-- Shorter Version
+--loadstring(game:HttpGet('https://raw.githubusercontent.com/AnonymousUserUnknown/Roblox-Star-Wars-GUI/main/RSG'), true)
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Player = game.Players.LocalPlayer
 local Window = OrionLib:MakeWindow({Name = "Star Wars Script Made by....(idk)", HidePremium = false, SaveConfig = true, IntroText = "Hello And Welcome To The Star Wars Script GUI"})
