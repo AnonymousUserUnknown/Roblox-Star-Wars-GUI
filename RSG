@@ -1,0 +1,104 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Star Wars Script Made by....(idk)", HidePremium = false, SaveConfig = true, IntroText = "Hello And Welcome To The Star Wars Script GUI"})
+
+OrionLib:MakeNotification({
+	Name = "Logged In",
+	Content = "You Are Logged in as "..Player.Name.." ",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+    Name = "Main"
+})
+
+-- Inf Jumps
+Tab:AddButton({
+    Name = "Infinite Jumps",
+	Callback = function()
+        loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Jump.txt"))()
+    end    
+})
+
+-- Infinite Yeild
+Tab:AddButton({
+    Name = "Infinite Yeild",
+	Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+	end 
+})
+
+-- Auto Leave
+while true do
+	if game.Players.Askavix then
+		game.Players.LocalPlayer:Kick("Owner in this game")
+		wait();
+	end
+end
+
+-- Agility and Jump Power
+Tab:AddToggle({
+    Name = "Agility And Jump Power",
+	Default = false,
+	Callback = function(Value)
+		if Value then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 32 -- Change "100" to any number you want (Speed)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 60;
+            
+        else
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 28;
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50;
+            
+        end
+	end    
+})
+
+local Player = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+Player:AddSlider({
+    Name = "Speed",
+	Min = 16,
+	Max = 1000,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+	end    
+})
+Player:AddSlider({
+    Name = "Jump Power",
+	Min = 50,
+	Max = 500,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jump Power",
+	Callback = function(s)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+
+	end    
+})
+
+Player:AddButton({
+	Name = "Reset Speed and Jump Power",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 26
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = 60
+  	end    
+})
+
+OrionLib:Init()
